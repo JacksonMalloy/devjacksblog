@@ -17,7 +17,7 @@ const RootIndex = props => {
 
   const BlogGrid = styled.main`
     display: grid;
-    grid-template-columns: repeat(auto-fill, 10%);
+    grid-template-columns: repeat(auto-fill, 5%);
     grid-auto-rows: 50px;
     grid-auto-flow: dense;
   `
