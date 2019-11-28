@@ -1,36 +1,42 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import styled from 'styled-components'
 
-//styled components
-// import { BlogGrid } from './styles'
-
 const RootIndex = props => {
   const siteTitle = props.data.site.siteMetadata.title
   const posts = props.data.allContentfulBlogPost.edges
-  const [author] = props.data.allContentfulPerson.edges
 
-  const BlogGrid = styled.main`
+  const BlogGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, 5%);
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
     grid-auto-rows: 50px;
     grid-auto-flow: dense;
+    grid-gap: 1.4rem;
+    margin: 0 auto;
+    align-items: right;
+    align-self: center;
+    justify-self: center;
+  `
+
+  const Container = styled.main`
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
   `
 
   return (
     <Layout location={props.location}>
       <Helmet title={siteTitle} />
-      {/* <Hero data={author.node} /> */}
-      <BlogGrid>
-        {posts.map(({ node }) => {
-          return <ArticlePreview article={node} key={node.slug} />
-        })}
-      </BlogGrid>
+      <Container>
+        <BlogGrid>
+          {posts.map(({ node }) => {
+            return <ArticlePreview article={node} key={node.slug} />
+          })}
+        </BlogGrid>
+      </Container>
     </Layout>
   )
 }

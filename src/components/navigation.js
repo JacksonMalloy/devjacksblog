@@ -4,12 +4,12 @@ import { Link } from 'gatsby'
 export default () => (
   <nav role="navigation">
     <ul>
-      <li>
+      {/* <li>
         <Link to="/">Home</Link>
       </li>
       <li>
         <Link to="/blog/">Blog</Link>
-      </li>
+      </li> */}
     </ul>
   </nav>
 )
